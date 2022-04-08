@@ -5,12 +5,43 @@ import Button from "@mui/material/Button";
 import Popular from "./popular";
 import Stack from "@mui/material/Stack";
 import Transaction from "./transaction";
-import Sidebar from "../sidebar/sidebar";
+
 function Center() {
+  const popularStocks = [
+    {
+      id: 1,
+      sName: "ADS",
+      fName: "Addidas",
+      price: "$1200",
+      increment: "20% this week",
+    },
+    {
+      id: 2,
+      sName: "ADS",
+      fName: "Addidas",
+      price: "$1200",
+      increment: "20% this week",
+    },
+    {
+      id: 3,
+      sName: "ADS",
+      fName: "Addidas",
+      price: "$1200",
+      increment: "20% this week",
+    },
+    {
+      id: 4,
+      sName: "ADS",
+      fName: "Addidas",
+      price: "$1200",
+      increment: "20% this week",
+    },
+  ];
+
   return (
     <Stack direction="row">
       <Stack marginLeft={2}>
-        <Typography variant="h4">Stock Market</Typography>
+        <Typography variant="h5">Stock Market</Typography>
         <Typography variant="caption">Trending Market Group</Typography>
         <Box component="span" sx={{ p: 0 }} textAlign="end">
           <Button>View all</Button>
@@ -34,9 +65,6 @@ function Center() {
         </Typography>
         <Transaction></Transaction>
         <Transaction></Transaction>
-      </Stack>
-      <Stack marginLeft={2}>
-        <Sidebar></Sidebar>
       </Stack>
     </Stack>
   );

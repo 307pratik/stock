@@ -5,9 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import DeleteIcon from "@mui/icons-material/Delete";
-import AlarmIcon from "@mui/icons-material/Alarm";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 
 export default function Trending() {
   return (
@@ -15,34 +13,29 @@ export default function Trending() {
       <Box
         sx={{
           width: 300,
-          height: "auto",
-          backgroundColor: "#f9fbe7",
+          height: 150,
+          backgroundColor: "#e0e0e0",
         }}
       >
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={6}>
-            <Stack direction="row">
+        <Grid container>
+          <Grid item xs={9} alignItems="center">
+            <Grid>
               <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
-              <Grid margin={1}>
-                <Typography variant="h6">APLL</Typography>
-
-                <Typography variant="caption" display="block" gutterBottom>
-                  Apple
-                </Typography>
-              </Grid>
-            </Stack>
+            </Grid>
+            <Grid>
+              <Typography variant="h6">APLL</Typography>
+              <Typography variant="caption">Apple</Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={2}>
             <IconButton aria-label="delete">
               <DeleteIcon />
             </IconButton>
           </Grid>
-          <Grid item xs={6}>
-            <IconButton aria-label="delete">
-              <DeleteIcon />
-            </IconButton>
+          <Grid item xs={7} textAlign="center">
+            <Typography variant="h6">Graph</Typography>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             <h3>$10.390,00</h3>
           </Grid>
         </Grid>

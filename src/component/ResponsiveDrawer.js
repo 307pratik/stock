@@ -1,17 +1,13 @@
 import * as React from "react";
-import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
-import Toolbar from "@mui/material/Toolbar";
+import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
+import { MenuItem, MenuList } from "@mui/material";
 
-const drawerWidth = 240;
+const drawerWidth = 210;
 
 function ResponsiveDrawer(props) {
   const { window } = props;
@@ -22,23 +18,36 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <List>
-        {["Market", "Dashboard", "Portfolio", "News", "Settings"].map(
-          (text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          )
-        )}
-      </List>
-      <Divider />
-    </div>
+    <React.Fragment>
+      <Box textAlign="center" margin={2}>
+        <Typography variant="h6" gutterBottom component="div">
+          STOCKIN
+        </Typography>
+        <Divider width="100%" />
+      </Box>
+      <Box>
+        <MenuList>
+          <Stack>
+            <Link to="/market">
+              <MenuItem> Market </MenuItem>
+            </Link>
+
+            <Link to="/">
+              <MenuItem> Dashboard </MenuItem>
+            </Link>
+            <Link to="/portfolio">
+              <MenuItem> Portfolio </MenuItem>
+            </Link>
+            <Link to="/news">
+              <MenuItem> News </MenuItem>
+            </Link>
+            <Link to="/settings">
+              <MenuItem> Settings </MenuItem>
+            </Link>
+          </Stack>
+        </MenuList>
+      </Box>
+    </React.Fragment>
   );
 
   const container =
@@ -67,9 +76,7 @@ function ResponsiveDrawer(props) {
               width: drawerWidth,
             },
           }}
-        >
-          {drawer}
-        </Drawer>
+        ></Drawer>
         <Drawer
           variant="permanent"
           sx={{
@@ -87,13 +94,5 @@ function ResponsiveDrawer(props) {
     </Box>
   );
 }
-
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
 
 export default ResponsiveDrawer;
